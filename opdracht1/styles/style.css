@@ -86,6 +86,7 @@ h1 {
     background-clip: text;
     text-fill-color: transparent;
     -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
 }
 
@@ -105,13 +106,10 @@ span {
         text-shadow: var(--text-shadow1);
         transform: translate(-110px, -110px);
     }
-    42% {
-        text-shadow: none;
-    }
+
     
     45% {
         text-shadow: none;
-        background-position: 90% center;
     }
     
     48% {
@@ -121,9 +119,16 @@ span {
     60% {
         transform: translate(-10px, -10px);
     }
+    
+    72% {
+        transform: translate(5px, 5px);
+    }
     73% {
-        transform: translate(0px, 0px);
         background-position: 81% center;
+    }
+    
+    79% {
+        transform: translate(0px, 0px);
     }
     100 % {
         background-position: 80% center;
@@ -146,7 +151,6 @@ span {
     
     45% {
         text-shadow: none;
-        background-position: 90% center;
     }
     
     48% {
@@ -156,12 +160,19 @@ span {
     60% {
         transform: translate(-10px, -10px);
     }
+    
+    72% {
+        transform: translate(5px, 5px);
+    }
     73% {
+        background-position: 150% center;
+    }
+    
+    79% {
         transform: translate(0px, 0px);
-        background-position: 81% center;
     }
     100 % {
-        background-position: 80% center;
+        background-position: 200% center;
     }
 }
 
