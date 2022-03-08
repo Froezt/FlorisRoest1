@@ -15,7 +15,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Bronnenlijst
   1. <a href="https://cssgradient.io/blog/css-gradient-text/">Gradient text</a>
-    2. <a href="https://traverstodd.com/css3-rgba-long-shadow-generator/">Textshadow generator</a>
+  2. <a href="https://traverstodd.com/css3-rgba-long-shadow-generator/">Textshadow generator</a>
   3. -...-
 
 
