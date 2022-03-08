@@ -14,8 +14,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
-  1. -bron 1-
-  2. -bron 2-
+  1. <a href="https://cssgradient.io/blog/css-gradient-text/">Gradient text</a>
+    2. <a href="https://traverstodd.com/css3-rgba-long-shadow-generator/">Textshadow generator</a>
   3. -...-
 
 
@@ -27,15 +27,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je storyboard:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
+  <img src="readme-images/Storyboard.png" width="375px" alt="storyboard voor opdracht 1">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Textshadows
+  - Een shine/flare gebruiken met css
+  - Darkmode
  
 </details>
 
@@ -52,13 +51,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Textshadows zijn vrij simpel te gebruiken en ook vrij flexibel doordat je overal om de tekst een shadow kan plaatsen, hiermee kan je een soort 3D effect creeëren waardoor het lijkt alsof het woord Dior naar voren komt.
+  Verder vond ik de darkmode vrij simpel. Door een media query te gebruiken kan je makkelijk alle elementen aanpassen waarvan het nodig is.
 
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  Uiteindelijk was het erg lastig om een soort shine/flare toe te voegen, de css code die ik online vond was vaak erg ingewikkeld, daarom heb ik ervoor gekozen om de "shine" te veranderen in een glinster die over de tekst gaat doormiddel van een gradient text background. Dit was uiteindelijk nog best ingewikkeld want ik moest de text in de gradient clippen en de text tranparant maken, gelukkig heb ik snel gevonden hoe dit moest. (Zie bronnenlijst.)
 
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
 </details>
