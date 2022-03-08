@@ -58,7 +58,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit was lastig/Is niet gelukt:
-  Uiteindelijk was het erg lastig om een soort shine/flare toe te voegen, de css code die ik online vond was vaak erg ingewikkeld, daarom heb ik ervoor gekozen om de "shine" te veranderen in een glinster die over de tekst gaat doormiddel van een gradient text background. Dit was uiteindelijk nog best ingewikkeld want ik moest de text in de gradient clippen en de text tranparant maken, gelukkig heb ik snel gevonden hoe dit moest. (Zie bronnenlijst.)
+  Uiteindelijk was het erg lastig om een soort shine/flare toe te voegen, de css code die ik online vond was vaak erg ingewikkeld, daarom heb ik ervoor gekozen om de "shine" te veranderen in een glinster die over de tekst gaat doormiddel van een gradient text background. Dit was uiteindelijk nog best ingewikkeld want ik moest de tekst in de gradient clippen en de tekst tranparant maken, gelukkig heb ik snel gevonden hoe dit moest. (Zie bronnenlijst.)
 
   <img src="readme-images/dior2.png" width="375px" alt="bummer">
 </details>
