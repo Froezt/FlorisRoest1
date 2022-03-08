@@ -16,7 +16,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Bronnenlijst
   1. <a href="https://cssgradient.io/blog/css-gradient-text/">Gradient text</a>
   2. <a href="https://traverstodd.com/css3-rgba-long-shadow-generator/">Textshadow generator</a>
-  3. -...-
+  3. <a href="https://www.w3schools.com/jsref/met_win_settimeout.asp">Timer zodat de transition van de hover niet botst met de animatie aan de start</a>
 
 
 
