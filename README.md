@@ -54,13 +54,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Textshadows zijn vrij simpel te gebruiken en ook vrij flexibel doordat je overal om de tekst een shadow kan plaatsen, hiermee kan je een soort 3D effect creeëren waardoor het lijkt alsof het woord Dior naar voren komt.
   Verder vond ik de darkmode vrij simpel. Door een media query te gebruiken kan je makkelijk alle elementen aanpassen waarvan het nodig is.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="readme-images/dior.png" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
   Uiteindelijk was het erg lastig om een soort shine/flare toe te voegen, de css code die ik online vond was vaak erg ingewikkeld, daarom heb ik ervoor gekozen om de "shine" te veranderen in een glinster die over de tekst gaat doormiddel van een gradient text background. Dit was uiteindelijk nog best ingewikkeld want ik moest de text in de gradient clippen en de text tranparant maken, gelukkig heb ik snel gevonden hoe dit moest. (Zie bronnenlijst.)
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="readme-images/dior2.png" width="375px" alt="bummer">
 </details>
 
 
