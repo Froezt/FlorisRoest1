@@ -194,12 +194,7 @@ span {
 @media (prefers-color-scheme: dark) {
     h1 {
         background-image: var(--white-gradient);
-        background-clip: text;
-        text-fill-color: transparent;
-        /* Om de gradient background van de tekst te veranderen met een media query moet je de hele setup weer opnieuw uit typen. */
-        -webkit-background-clip: text;
-        -webkit-box-decoration-break: clone;
-        -webkit-text-fill-color: transparent;
+
     }
 
     :root {
