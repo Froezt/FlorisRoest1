@@ -75,7 +75,7 @@ h1 {
     width: 100%;
     height: 100%;
     align-items: center;
-    margin: 0em;
+    margin: 0px;
     display: flex;
     justify-content: center;
     animation-name: dioranimate;
@@ -103,7 +103,7 @@ span {
 
     40% {
         text-shadow: var(--text-shadow1);
-        transform: translate(-6.875em, -6.875em);
+        transform: translate(-110px, -110px);
     }
 
     /* Dit zijn de animaties, het begint met 1 witte text-shadow zodat het Dior logo zichtbaar is voor de rest van de shadow. Door de tekst mee te transformen met de     shadow, lijk het alsof de tekst verplaatst en de shadow op dezelfde plek blijft. De text-shadow schiet daarna terug en het Dior logo eindigt met een kleine terugvering weer terug op zijn originele plek */
@@ -112,15 +112,15 @@ span {
     }
 
     48% {
-        transform: translate(1.25em, 1.25em);
+        transform: translate(20px, 20px);
     }
 
     60% {
-        transform: translate(-0.625em, -0.625em);
+        transform: translate(-10px, -10px);
     }
 
     72% {
-        transform: translate(0.3125em, 0.3125em);
+        transform: translate(5px, 5px);
     }
 
     73% {
@@ -128,7 +128,7 @@ span {
     }
 
     79% {
-        transform: translate(0em, 0em);
+        transform: translate(0px, 0px);
     }
 
     100 % {
@@ -144,7 +144,7 @@ span {
 
     40% {
         text-shadow: var(--text-shadow2);
-        transform: translate(-4.4375em, -4.4375em);
+        transform: translate(-71px, -71px);
     }
 
     42% {
@@ -156,15 +156,15 @@ span {
     }
 
     48% {
-        transform: translate(1.25em, 1.25em);
+        transform: translate(20px, 20px);
     }
 
     60% {
-        transform: translate(-0.625em, -0.625em);
+        transform: translate(-10px, -10px);
     }
 
     72% {
-        transform: translate(0.3125em, 0.3125em);
+        transform: translate(5px, 5px);
     }
 
     73% {
@@ -172,7 +172,7 @@ span {
     }
 
     79% {
-        transform: translate(0em, 0em);
+        transform: translate(0px, 0px);
     }
 
     100 % {
@@ -211,7 +211,7 @@ span {
 
         40% {
             text-shadow: var(--text-shadow2);
-            transform: translate(-4.4375em, -4.4375em);
+            transform: translate(-71px, -71px);
         }
 
         42% {
@@ -223,17 +223,17 @@ span {
         }
 
         48% {
-            transform: translate(1.25em, 1.25em);
+            transform: translate(20px, 20px);
         }
 
         60% {
-            transform: translate(-0.625em, -0.625em);
+            transform: translate(-10px, -10px);
         }
 
         /* Als je een animatie wilt veranderen met een media query, moet je de hele animatie opnieuw uit typen. */
 
         72% {
-            transform: translate(0.3125em, 0.3125em);
+            transform: translate(5px, 5px);
         }
 
         73% {
@@ -241,7 +241,7 @@ span {
         }
 
         79% {
-            transform: translate(0em, 0em);
+            transform: translate(0px, 0px);
         }
 
         100 % {
@@ -254,8 +254,8 @@ span {
 
 span:hover {
     text-shadow: rgb(255, 255, 255) 1px 1px 0px, rgb(179, 179, 179) 2px 2px 0px, rgb(179, 179, 179) 3px 3px 0px, rgb(179, 179, 179) 4px 4px 0px, rgb(179, 179, 179) 5px 5px 0px, rgb(179, 179, 179) 6px 6px 0px, rgb(179, 179, 179) 7px 7px 0px, rgb(179, 179, 179) 8px 8px 0px, rgb(179, 179, 179) 9px 9px 0px, rgb(179, 179, 179) 10px 10px 0px, rgb(179, 179, 179) 11px 11px 0px, rgb(179, 179, 179) 12px 12px 0px, rgb(179, 179, 179) 13px 13px 0px, rgb(179, 179, 179) 14px 14px 0px, rgb(179, 179, 179) 15px 15px 0px, rgb(179, 179, 179) 16px 16px 0px, rgb(179, 179, 179) 17px 17px 0px, rgb(179, 179, 179) 18px 18px 0px, rgb(179, 179, 179) 19px 19px 0px, rgb(179, 179, 179) 20px 20px 0px, rgb(179, 179, 179) 21px 21px 0px, rgb(179, 179, 179) 22px 22px 0px, rgb(179, 179, 179) 23px 23px 0px, rgb(179, 179, 179) 24px 24px 0px, rgb(179, 179, 179) 25px 25px 0px, rgb(179, 179, 179) 26px 26px 0px, rgb(179, 179, 179) 27px 27px 0px, rgb(179, 179, 179) 28px 28px 0px, rgb(179, 179, 179) 29px 29px 0px, rgb(179, 179, 179) 30px 30px 0px, rgb(179, 179, 179) 31px 31px 0px, rgb(179, 179, 179) 32px 32px 0px, rgb(179, 179, 179) 33px 33px 0px, rgb(179, 179, 179) 34px 34px 0px, rgb(179, 179, 179) 35px 35px 0px, rgb(179, 179, 179) 36px 36px 0px, rgb(179, 179, 179) 37px 37px 0px, rgb(179, 179, 179) 38px 38px 0px, rgb(179, 179, 179) 39px 39px 0px, rgb(179, 179, 179) 40px 40px 0px, rgb(179, 179, 179) 41px 41px 0px, rgb(179, 179, 179) 42px 42px 0px, rgb(179, 179, 179) 43px 43px 0px, rgb(179, 179, 179) 44px 44px 0px, rgb(179, 179, 179) 45px 45px 0px, rgb(179, 179, 179) 46px 46px 0px;
-    padding-right: 3,75em;
+    padding-right: 60px;
     /* Door padding aan de bottom en right toe te voegen beweegt de padding van de letter niet van de muis af en zal het voorkomen dat de letter gaat buggen. */
-    padding-bottom: 3,75em;
-    transform: translate(0em, -1.25em);
+    padding-bottom: 60px;
+    transform: translate(0px, -20px);
 }
