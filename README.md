@@ -72,7 +72,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je ontwerp:
-  <img src="readme-images/bingo.png" width="375px" alt="ontwerp opdracht 2">
+  <img src="readme-images/Bingo.png" width="375px" alt="ontwerp opdracht 2">
 
 
   ### Je ambitie: 
@@ -126,13 +126,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Ik heb geleerd om spraak herkenning toe te voegen aan mijn site waarvan ik daarvoor eigenlijk nog nooit had gehoord en ook niet wist dat dat een mogelijkheid was. Verder heb ik meer geleerd over drag en drop en de eventlisteners die daarbij horen, de eventlisteners zelf zijn best simpel.
 
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  Ik vond het erg lastig om iets te "markeren" met drag en drop, telkens als ik over een gemarkeerd item ging met de stempel veranderde deze weer in een ongemarkeerd item. 
 
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
 </details>
