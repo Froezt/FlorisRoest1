@@ -16,7 +16,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Bronnenlijst
   1. <a href="https://cssgradient.io/blog/css-gradient-text/">Gradient text</a>
   2. <a href="https://traverstodd.com/css3-rgba-long-shadow-generator/">Textshadow generator</a>
-  3. -...-
+  3. <a href="https://www.youtube.com/watch?v=C22hQKE_32c&t=995s">Drag and drop</a>
+  4. <a href="https://codepen.io/shooft/pen/wvPgqRX">Spraakherkening</a>
+  5. <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">Grid</a>
 
 
 
