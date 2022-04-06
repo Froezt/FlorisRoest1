@@ -1,5 +1,5 @@
 # Procesverslag
-**Auteur:** -jouw naam-
+**Auteur:** -Floris Roest-
 
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
@@ -77,10 +77,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Drag en drop doormiddel van een stempel, dus eventlisteners met dragOver en dragEnd etc.
+  - Het programmeren van een bingo systeem.
+  - Spraak herkenning door Bingo! te roepen.
+  - Als ik tijd heb wat leuke aninmaties.
 </details>
 
 
