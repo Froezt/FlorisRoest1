@@ -186,35 +186,30 @@ function bingoKnop() {
         return rolled.includes(element);
     });
     if (containsAllB == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllB);
     }
     const containsAllI = rowI.every(element => {
         return rolled.includes(element);
     });
     if (containsAllI == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllI);
     }
     const containsAllN = rowN.every(element => {
         return rolled.includes(element);
     });
     if (containsAllN == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllN);
     }
     const containsAllG = rowG.every(element => {
         return rolled.includes(element);
     });
     if (containsAllG == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllG);
     }
     const containsAllO = rowO.every(element => {
         return rolled.includes(element);
     });
     if (containsAllO == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllO);
 
     }
@@ -223,7 +218,6 @@ function bingoKnop() {
         return rolled.includes(element);
     });
     if (containsAll1 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAll1);
     }
 
@@ -231,28 +225,24 @@ function bingoKnop() {
         return rolled.includes(element);
     });
     if (containsAll2 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAll2);
     }
     const containsAll3 = column3.every(element => {
         return rolled.includes(element);
     });
     if (containsAll3 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAll3);
     }
     const containsAll4 = column4.every(element => {
         return rolled.includes(element);
     });
     if (containsAll4 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAll4);
     }
     const containsAll5 = column5.every(element => {
         return rolled.includes(element);
     });
     if (containsAll5 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAll5);
     }
 
@@ -260,19 +250,20 @@ function bingoKnop() {
         return rolled.includes(element);
     });
     if (containsAllD1 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllD1);
     }
     const containsAllD2 = diagonal2.every(element => {
         return rolled.includes(element);
     });
     if (containsAllD2 == true) {
-        console.log("BINGO!");
         valseBingo.push(containsAllD2);
     }
     if (valseBingo.length == 0) {
         document.getElementById("nobingo").style.display = "inline-block";
         console.log("valsbingo1");
+    }
+    else {
+        document.getElementById("welbingo").style.display = "inline-block";
     }
 }
 
@@ -335,7 +326,7 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
 /* de commando's */
-var commandos = [ 'Bingo'];
+var commandos = [ 'Bingo', 'bingo'];
 var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
 
 /* het luisterobject */
@@ -348,7 +339,7 @@ function spraakAfhandelen(event) {
   let commando = event.results[last][0].transcript;
   console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
 
-  if ( commando.trim() == "Bingo") {
+  if ( commando.trim() == "bingo" || commando.trim() == "Bingo") {
     bingoKnop()
   }
 }
