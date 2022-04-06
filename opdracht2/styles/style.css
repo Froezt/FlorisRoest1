@@ -207,6 +207,7 @@ p {
     height: auto;
     transform: translate(6.5em, -14em);
     transition: 0.5s;
+    opacity: 1;
 }
 
 .stamp:hover {
@@ -276,7 +277,7 @@ p {
 }
 
 .invisible {
-    display: none;
+    opacity: 0;
 }
 
 /* jouw code */

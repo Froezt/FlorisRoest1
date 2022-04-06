@@ -21,6 +21,7 @@ var diagonal1 = [];
 var diagonal2 = [];
 var rolled = [];
 var stepB = 0;
+var valseBingo = [];
 
 function start() {
     for (let i = 0; i < 5; i++) {
@@ -162,6 +163,7 @@ function start() {
     console.log(rowO);
     console.log(diagonal1);
     console.log(diagonal2);
+    document.getElementsByClassName('stamp')[0].setAttribute('draggable', true);
 }
 
 function roll() {
@@ -175,38 +177,45 @@ function roll() {
     rollerArray.splice(index, 1);
     rolled.push(randomNummer);
     console.log(rolled);
+    document.getElementById("nobingo").style.display = "none";
 }
 
 function bingoKnop() {
+    console.log(valseBingo)
     const containsAllB = rowB.every(element => {
         return rolled.includes(element);
     });
     if (containsAllB == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllB);
     }
     const containsAllI = rowI.every(element => {
         return rolled.includes(element);
     });
     if (containsAllI == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllI);
     }
     const containsAllN = rowN.every(element => {
         return rolled.includes(element);
     });
     if (containsAllN == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllN);
     }
     const containsAllG = rowG.every(element => {
         return rolled.includes(element);
     });
     if (containsAllG == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllG);
     }
     const containsAllO = rowO.every(element => {
         return rolled.includes(element);
     });
     if (containsAllO == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllO);
 
     }
 
@@ -215,6 +224,7 @@ function bingoKnop() {
     });
     if (containsAll1 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAll1);
     }
 
     const containsAll2 = column2.every(element => {
@@ -222,24 +232,28 @@ function bingoKnop() {
     });
     if (containsAll2 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAll2);
     }
     const containsAll3 = column3.every(element => {
         return rolled.includes(element);
     });
     if (containsAll3 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAll3);
     }
     const containsAll4 = column4.every(element => {
         return rolled.includes(element);
     });
     if (containsAll4 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAll4);
     }
     const containsAll5 = column5.every(element => {
         return rolled.includes(element);
     });
     if (containsAll5 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAll5);
     }
 
     const containsAllD1 = diagonal1.every(element => {
@@ -247,14 +261,19 @@ function bingoKnop() {
     });
     if (containsAllD1 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllD1);
     }
     const containsAllD2 = diagonal2.every(element => {
         return rolled.includes(element);
     });
     if (containsAllD2 == true) {
         console.log("BINGO!");
+        valseBingo.push(containsAllD2);
     }
-    document.getElementById("nobingo").style.display = "inline-block";
+    if (valseBingo.length == 0) {
+        document.getElementById("nobingo").style.display = "inline-block";
+        console.log("valsbingo1");
+    }
 }
 
 //drag and drop
