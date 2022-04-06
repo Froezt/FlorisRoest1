@@ -316,7 +316,7 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
 /* de commando's */
-var commandos = [ 'open', 'sluit'];
+var commandos = [ 'Bingo'];
 var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
 
 /* het luisterobject */
@@ -325,15 +325,12 @@ var speechRecognitionList = new SpeechGrammarList();
 
 /* als er een commando uitgesproken is */
 function spraakAfhandelen(event) {
-  let deNav = document.querySelector("section.met-je-stem nav");
   let last = event.results.length - 1;
   let commando = event.results[last][0].transcript;
   console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
 
-  if ( commando.trim() == "open") {
-    deNav.classList.add("toonMenu");
-  } else if (commando.trim() == "sluit") {
-    deNav.classList.remove("toonMenu");
+  if ( commando.trim() == "Bingo") {
+    bingoKnop()
   }
 }
 
