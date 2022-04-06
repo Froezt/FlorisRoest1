@@ -134,5 +134,5 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Dit was lastig/Is niet gelukt:
   Ik vond het erg lastig om iets te "markeren" met drag en drop, telkens als ik over een gemarkeerd item ging met de stempel veranderde deze weer in een ongemarkeerd item. 
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="readme-images/kaart1.png" width="375px" alt="bummer">
 </details>
