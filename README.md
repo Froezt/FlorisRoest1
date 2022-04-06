@@ -122,13 +122,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/valsebingo.png" width="375px" alt="uitkomst opdracht 2">
 
 
   ### Dit ging goed/Heb ik geleerd: 
   Ik heb geleerd om spraak herkenning toe te voegen aan mijn site waarvan ik daarvoor eigenlijk nog nooit had gehoord en ook niet wist dat dat een mogelijkheid was. Verder heb ik meer geleerd over drag en drop en de eventlisteners die daarbij horen, de eventlisteners zelf zijn best simpel.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="readme-images/site.png" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
