@@ -202,7 +202,56 @@ function start() {
         if (event.code === 'Space') {
             roll(); //whatever you want to do when space is pressed
         }
-    }, {once: true})
+    }, {
+        once: true
+    })
+
+    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+    var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+
+    /* de commando's */
+    var commandos = ['bingo', 'Bingo'];
+    var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
+
+    /* het luisterobject */
+    var recognition = new SpeechRecognition();
+    var speechRecognitionList = new SpeechGrammarList();
+
+    /* als er een commando uitgesproken is */
+    function spraakAfhandelen(event) {
+        let deNav = document.querySelector("section.met-je-stem nav");
+        let last = event.results.length - 1;
+        let commando = event.results[last][0].transcript;
+        console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
+
+        if (commando.trim() == "bingo" || commando.trim() == "Bingo" ) {
+            bingo();
+        }
+    }
+
+    function luisteren() {
+        recognition.start();
+        console.log('Ready to receive a command.');
+    }
+
+    /* het luisterobject de commando's leren */
+    speechRecognitionList.addFromString(grammar, 1);
+    recognition.grammars = speechRecognitionList;
+    recognition.continuous = true;
+    recognition.lang = 'en';
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = function (event) {
+        spraakAfhandelen(event);
+    }
+
+    recognition.onend = function () {
+        luisteren();
+    }
+
+    luisteren();
 }
 
 
@@ -279,7 +328,9 @@ function roll() {
             if (event.code === 'Space') {
                 roll(); //whatever you want to do when space is pressed
             }
-        }, {once: true})
+        }, {
+            once: true
+        })
     }
     var index = rollerArray.indexOf(randomNummer);
     rollerArray.splice(index, 1);
@@ -377,63 +428,3 @@ function bingo() {
     document.getElementById("rollhelp").style.display = "none";
     document.getElementById("bingohelp").style.display = "none";
 }
-
-//drag and drop
-
-
-
-
-
-
-
-
-
-/* stamp.addEventListener('dragstart', dragStart);
-stamp.addEventListener('dragend', dragEnd);
-
-//drag functions
-function dragStart() {
-    stamp.className += " hold";
-    setTimeout(() => (stamp.className = 'invisible'), 0);
-
-}
-
-
-
-function dragEnd() {
-    stamp.className = 'stamp'
-}
-
-function dragOver(e) {
-    e.preventDefault();
-    console.log("over")
-    this.style.backgroundColor = "grey";
-}
-
-function dragEnter(e) {
-    e.preventDefault();
-    console.log("Enter")
-}
-
-function dragLeave() {
-    console.log("Leave")
-    this.style.backgroundColor = "rgb(237, 232, 140)";
-}
-
-
-function dragDrop() {
-    console.log("Drop")
-    stamp.className = 'stamp';
-    this.classList.remove("box");
-    this.classList.add("checkedBox");
-    this.style.backgroundColor = "red";
-}
-
-var boxes = document.querySelectorAll(".box");
-
-for (const box of boxes) {
-    box.addEventListener('dragover', dragOver);
-    box.addEventListener('dragenter', dragEnter);
-    box.addEventListener('dragleave', dragLeave);
-    box.addEventListener('drop', dragDrop);
-} */
