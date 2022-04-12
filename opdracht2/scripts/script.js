@@ -198,51 +198,6 @@ function start() {
 
     document.querySelector(".list li").style.display = "none";
 
-    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-    var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-    var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
-
-
-    var commandos = ['Bingo', 'bingo'];
-    var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
-
-
-    var recognition = new SpeechRecognition();
-    var speechRecognitionList = new SpeechGrammarList();
-
-
-    function spraakAfhandelen(event) {
-        let last = event.results.length - 1;
-        let commando = event.results[last][0].transcript;
-        console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
-
-        if (commando.trim() == "bingo" || commando.trim() == "Bingo") {
-            bingo()
-        }
-    }
-
-    function luisteren() {
-        recognition.start();
-        console.log('Ready to receive a command.');
-    }
-
-    speechRecognitionList.addFromString(grammar, 1);
-    recognition.grammars = speechRecognitionList;
-    recognition.continuous = true;
-    recognition.lang = 'en';
-    recognition.interimResults = true;
-    recognition.maxAlternatives = 1;
-
-    recognition.onresult = function (event) {
-        spraakAfhandelen(event);
-    }
-
-    recognition.onend = function () {
-        luisteren();
-    }
-
-    luisteren();
-
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') {
             roll(); //whatever you want to do when space is pressed
@@ -297,6 +252,7 @@ function removeCheck() {
 
 function roll() {
     document.getElementById('rollbutton').removeAttribute("onclick");
+    document.getElementById("nobingo").style.display = "none";
     const randomNummer = rollerArray[Math.floor(Math.random() * rollerArray.length)];
     element = document.querySelectorAll(".container div");
     element2 = document.querySelectorAll("#roller ul li");
@@ -315,6 +271,7 @@ function roll() {
 
     function revealNumber() {
         element[randomNummer - 1].style.background = "linear-gradient(180deg, rgba(251,247,95,1) 49%, rgba(200,184,0,1) 100%)";
+        element[randomNummer - 1].style.boxShadow = "0em -0.1em 0px 0px rgb(133, 133, 0)";
         element[randomNummer - 1].innerHTML = randomNummer;
         element4 = document.querySelectorAll("#roller .rollanimation");
         document.getElementById('rollbutton').setAttribute('onclick', 'roll()')
@@ -328,7 +285,6 @@ function roll() {
     rollerArray.splice(index, 1);
     rolled.push(randomNummer);
     console.log(rolled);
-    document.getElementById("nobingo").style.display = "none";
     document.getElementById("rollhelp").style.display = "none";
     document.getElementById("bingohelp").style.display = "none";
 }
