@@ -118,7 +118,15 @@ h1 {
     display: none;
 }
 
+#rollhelp {
+    display: none;
+}
+
 #bingobutton {
+    display: none;
+}
+
+#bingohelp {
     display: none;
 }
 
@@ -186,6 +194,7 @@ h1 {
 
 .checked:hover {
     background-color: grey;
+    cursor: pointer;
 }
 
 
@@ -483,6 +492,9 @@ li {
     opacity: 1;
 }
 
+.sortable-ghost {
+    opacity: 0;
+}
 
 .sortable-fallback {
     opacity: 1 !important;
@@ -493,6 +505,7 @@ li {
     background-color: grey;
 }
 
+.nomorehovered {}
 
 
 /* jouw code */

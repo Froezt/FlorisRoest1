@@ -25,6 +25,7 @@ var valseBingo = [];
 var dragging = false;
 
 document.getElementById("startbutton").addEventListener("click", start);
+
 function start() {
     document.getElementById('startbutton').style.display = "none";
     for (let i = 0; i < 5; i++) {
@@ -154,6 +155,8 @@ function start() {
     }
     document.getElementById("rollbutton").style.display = "inline-block";
     document.getElementById("bingobutton").style.display = "inline-block";
+    document.getElementById("rollhelp").style.display = "inline-block";
+    document.getElementById("bingohelp").style.display = "inline-block";
     console.log(column1);
     console.log(column2);
     console.log(column3);
@@ -194,50 +197,57 @@ function start() {
     });
 
     document.querySelector(".list li").style.display = "none";
-    /* var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-     var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-     var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+
+    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+    var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+    var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 
 
-     var commandos = ['Bingo', 'bingo'];
-     var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
+    var commandos = ['Bingo', 'bingo'];
+    var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
 
 
-     var recognition = new SpeechRecognition();
-     var speechRecognitionList = new SpeechGrammarList();
+    var recognition = new SpeechRecognition();
+    var speechRecognitionList = new SpeechGrammarList();
 
 
-     function spraakAfhandelen(event) {
-         let last = event.results.length - 1;
-         let commando = event.results[last][0].transcript;
-         console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
+    function spraakAfhandelen(event) {
+        let last = event.results.length - 1;
+        let commando = event.results[last][0].transcript;
+        console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
 
-         if (commando.trim() == "bingo" || commando.trim() == "Bingo") {
-             bingoKnop()
-         }
-     }
+        if (commando.trim() == "bingo" || commando.trim() == "Bingo") {
+            bingo()
+        }
+    }
 
-     function luisteren() {
-         recognition.start();
-         console.log('Ready to receive a command.');
-     }
+    function luisteren() {
+        recognition.start();
+        console.log('Ready to receive a command.');
+    }
 
-     speechRecognitionList.addFromString(grammar, 1);
-     recognition.grammars = speechRecognitionList;
-     recognition.continuous = true;
-     recognition.lang = 'en';
-     recognition.interimResults = true;
-     recognition.maxAlternatives = 1;
+    speechRecognitionList.addFromString(grammar, 1);
+    recognition.grammars = speechRecognitionList;
+    recognition.continuous = true;
+    recognition.lang = 'en';
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
 
-     recognition.onresult = function (event) {
-         spraakAfhandelen(event);
-     }
+    recognition.onresult = function (event) {
+        spraakAfhandelen(event);
+    }
 
-     recognition.onend = function () {
-         luisteren();
-     }
+    recognition.onend = function () {
+        luisteren();
+    }
 
-     luisteren(); */
+    luisteren();
+
+    document.addEventListener('keyup', event => {
+        if (event.code === 'Space') {
+            roll(); //whatever you want to do when space is pressed
+        }
+    }, {once: true})
 }
 
 
@@ -308,17 +318,24 @@ function roll() {
         element[randomNummer - 1].innerHTML = randomNummer;
         element4 = document.querySelectorAll("#roller .rollanimation");
         document.getElementById('rollbutton').setAttribute('onclick', 'roll()')
+        document.addEventListener('keyup', event => {
+            if (event.code === 'Space') {
+                roll(); //whatever you want to do when space is pressed
+            }
+        }, {once: true})
     }
     var index = rollerArray.indexOf(randomNummer);
     rollerArray.splice(index, 1);
     rolled.push(randomNummer);
     console.log(rolled);
     document.getElementById("nobingo").style.display = "none";
+    document.getElementById("rollhelp").style.display = "none";
+    document.getElementById("bingohelp").style.display = "none";
 }
 
 document.getElementById("bingobutton").addEventListener("click", bingo);
+
 function bingo() {
-    console.log(valseBingo)
     const containsAllB = rowB.every(element => {
         return rolled.includes(element);
     });
@@ -401,6 +418,8 @@ function bingo() {
     } else {
         document.getElementById("welbingo").style.display = "inline-block";
     }
+    document.getElementById("rollhelp").style.display = "none";
+    document.getElementById("bingohelp").style.display = "none";
 }
 
 //drag and drop
