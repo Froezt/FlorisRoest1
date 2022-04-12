@@ -63,10 +63,40 @@ body {
     background-color: var(--color-background);
     text-align: center;
     overflow: hidden;
+    padding: 0em;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.dragging {
+    cursor: grabbing;
+}
+
+.button {
+    box-shadow: 3px 5px 0px 0px #8a2a21;
+    background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    background-color: #c62d1f;
+    border-radius: 1.2em;
+    border: 1px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: eenfont;
+    font-size: 0.7em;
+    padding: 0.8em 2.6em;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
+}
+
+.button:hover {
+    background: darkred;
 }
 
 #roller {
-    background-color: lightyellow;
+    background: linear-gradient(180deg, rgba(221, 221, 221, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(221, 221, 221, 1) 100%);
     width: 5em;
     height: 5em;
     display: flex;
@@ -75,10 +105,13 @@ body {
     text-align: center;
     margin: auto;
     border-radius: 1em;
+    overflow: hidden;
+    margin-top: 1em;
 }
 
-#roller p {
+#roller li {
     font-size: 3em;
+    overflow: hidden;
 }
 
 #rollbutton {
@@ -97,24 +130,25 @@ body {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(7, 1fr);
-    width: 90%;
+    width: 100%;
     border: 3px rgb(115, 91, 67);
     border-style: solid;
     background-color: rgb(235, 188, 141);
     padding-top: 1em;
-    padding-left: 0.5em;
+    padding-left: 1em;
     border-radius: 0.3em;
-    margin-bottom: 1.6em;
+    margin-bottom: 1em;
     margin-right: 0em;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .container div {
-    background-color: rgb(115, 91, 67);
+    background: radial-gradient(circle, rgba(110, 88, 0, 1) 12%, rgba(31, 24, 0, 1) 100%);
     color: #fff;
     border-radius: 50%;
     height: 1.2em;
     width: 1.2em;
+    padding: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,6 +156,7 @@ body {
     margin-bottom: .5em;
     font-family: eenfont;
     color: red;
+    font-size: 1em;
 }
 
 .box {
@@ -132,24 +167,25 @@ body {
     border-style: solid;
     height: 2.7em;
     width: 2.7em;
-    display: flex;
+    font-family: eenfont;
+    color: black;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0;
 }
 
-.checkedBox {
+.box:checked {
+    background-color: grey;
+}
+
+.checked {
     background-color: red;
-    color: #fff;
-    border-radius: 0.4em;
-    border: 3px white;
-    border-style: solid;
-    height: 2.7em;
-    width: 2.7em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+}
+
+.checked:hover {
+    background-color: grey;
 }
 
 
@@ -177,6 +213,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .box2 p {
@@ -191,7 +232,7 @@ p {
     font-family: eenfont;
 }
 
-.kaart div {
+.kaart label {
     font-size: 1em;
     color: black;
     font-family: eenfont;
@@ -205,70 +246,21 @@ p {
 .stamp {
     width: 3em;
     height: auto;
-    transform: translate(6.5em, -14em);
-    transition: 0.5s;
     opacity: 1;
 }
 
-.stamp:hover {
-    cursor: move;
+.list {
+    transform: translate(14em, -14em);
 }
 
-@media (min-width: 900px) {
-    .kaart {
-        width: 25em;
-        transform: translate(67em, -30em);
-    }
-
-    .box {
-        width: 5em;
-        height: 5em;
-    }
-    .checkedBox {
-    background-color: red;
-    height: 5em;
+.list li {
+    font-family: eenfont;
+    color: black;
     width: 5em;
-
 }
 
-    .box2 {
-        width: 5em;
-        height: 5em;
-        padding-bottom: 1em;
-    }
-
-    .box2 p {
-        font-size: 4em;
-    }
-
-    .container div {
-        height: 2em;
-        width: 2em;
-    }
-
-    .container {
-        max-width: 60em;
-        transform: translateY(3em, -3em)
-    }
-
-    .stamp {
-        width: 7em;
-        transform: translate(38em, -70em)
-    }
-
-    #roller {
-        width: 15em;
-        height: 15em;
-        transform: translateX(-13em)
-    }
-
-    #roller p {
-        font-size: 7em;
-    }
-
-    .invisible {
-        display: none;
-    }
+.stamp:hover {
+    cursor: grab;
 }
 
 #welbingo {
@@ -283,5 +275,224 @@ p {
 .invisible {
     opacity: 0;
 }
+
+.radio {
+    position: absolute;
+    transform: translateX(-9999em);
+}
+
+#box1:checked + .box {
+    background-color: red;
+}
+
+#box1:checked + .box:hover {
+    background-color: grey;
+}
+
+#box2:checked + .box {
+    background-color: red;
+}
+
+#box2:checked + .box:hover {
+    background-color: grey;
+}
+
+li {
+    list-style-type: none;
+}
+
+.rollnumbers {
+    overflow: hidden;
+    padding-left: 0em;
+    transform: translateY(32.4em);
+}
+
+.rollnumbers li {
+    padding-top: 1em;
+    font-family: eenfont;
+}
+
+.rollanimation {
+    animation-name: roll;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    overflow: hidden;
+    padding-left: 0em;
+    transform: translateY(-32.3em)
+}
+
+.rollanimation li {
+    padding-top: 1em;
+    font-family: eenfont;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateY(32.4em)
+    }
+
+    100% {
+        transform: translateY(-32.3em)
+    }
+}
+
+
+@media (min-width: 900px) {
+    .kaart {
+        width: 25em;
+        transform: translate(67em, -35em);
+    }
+
+    .button {
+        border: 1px solid #d02718;
+        font-size: 1.1em;
+        padding: 0.8em 2.6em;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #810e05;
+    }
+
+    .box {
+        width: 5em;
+        height: 5em;
+    }
+
+    .checkedBox {
+        background-color: red;
+        height: 5em;
+        width: 5em;
+
+    }
+
+    .box2 {
+        width: 5em;
+        height: 5em;
+        padding-bottom: 1em;
+    }
+
+    .box2 p {
+        font-size: 4em;
+    }
+
+    .container div {
+        height: 2.2em;
+        width: 2.2em;
+    }
+
+    .container {
+        max-width: 60em;
+        transform: translateY(3em, -3em) padding-top: 2em;
+        padding-bottom: 2em;
+        padding-left: 2.5em;
+        border-radius: 0.3em;
+        margin-right: 0em;
+        margin-top: 1em;
+    }
+
+    .stamp {
+        width: 6em;
+    }
+
+    .list {
+        transform: translate(78em, -77em)
+    }
+
+    .list li {
+        width: 10em;
+    }
+
+    #roller {
+        width: 15em;
+        height: 15em;
+        transform: translateX(-13em)
+    }
+
+    #roller li {
+        font-size: 7em;
+    }
+
+    .invisible {
+        display: none;
+    }
+
+    .rollnumbers {
+        overflow: hidden;
+        padding-left: 0em;
+        transform: translateY(77.7em);
+    }
+
+    .rollnumbers li {
+        padding-top: 3em;
+        font-family: eenfont;
+    }
+
+    .rollanimation {
+        animation-name: roll;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        overflow: hidden;
+        padding-left: 0em;
+        transform: translateY(-75.3em)
+    }
+
+    .rollanimation li {
+        padding-top: 1em;
+        font-family: eenfont;
+    }
+
+    @keyframes roll {
+        0% {
+            transform: translateY(77.7em)
+        }
+
+        100% {
+            transform: translateY(-75.3em)
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-image: var(--white-gradient);
+    }
+
+    :root {
+        /* startje */
+        --color-main: Red;
+        --color-background: rgb(0, 0, 0);
+    }
+
+    .kaart {
+        background-color: darkred;
+    }
+
+    .box2 {
+        background-color: darkred;
+    }
+
+    h1 {
+        color: darkred;
+    }
+}
+
+.sortable-chosen {
+
+    opacity: 1;
+}
+
+.sortable-drag {
+    opacity: 1;
+}
+
+
+.sortable-fallback {
+    opacity: 1 !important;
+    touch-action: none;
+}
+
+.hovered {
+    background-color: grey;
+}
+
+
 
 /* jouw code */
