@@ -47,7 +47,8 @@ summary {
 :root {
     /* startje */
     --color-main: Red;
-    --color-background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);;
+    --color-background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    ;
 }
 
 
@@ -71,8 +72,10 @@ body {
     height: 100vh;
 }
 
-html, body {
-  overflow-x: hidden;
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 
@@ -220,7 +223,7 @@ h1 {
     box-shadow: 0.5em 0.5em 0px 0px rgb(34, 0, 107);
     padding-top: 1em;
     padding-bottom: 1em;
-    border-radius: 0.5em;
+    border-radius: 1em;
 }
 
 
@@ -478,7 +481,7 @@ li {
     :root {
         /* startje */
         --color-main: Red;
-        --color-background: linear-gradient(45deg, rgba(128,0,116,1) 0%, rgba(119,0,0,1) 32%, rgba(0,2,88,1) 67%, rgba(157,123,0,1) 100%);
+        --color-background: linear-gradient(45deg, rgba(128, 0, 116, 1) 0%, rgba(119, 0, 0, 1) 32%, rgba(0, 2, 88, 1) 67%, rgba(157, 123, 0, 1) 100%);
     }
 
     .kaart {
