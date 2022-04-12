@@ -47,7 +47,7 @@ summary {
 :root {
     /* startje */
     --color-main: Red;
-    --color-background: rgb(137, 199, 250);
+    --color-background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);;
 }
 
 
@@ -58,18 +58,22 @@ summary {
 /* JOUW STYLING */
 /****************/
 body {
+    position: relative;
     font-family: Romantiques, sans-serif;
     color: var(--color-main);
     text-align: center;
     overflow: hidden;
     padding: 0em;
     box-sizing: border-box;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: var(--color-background);
     background-size: 100% 100%;
     animation: gradient 15s ease infinite;
     height: 100vh;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 
 
 h1 {
@@ -266,7 +270,7 @@ p {
 }
 
 .list {
-    transform: translate(14em, -14em);
+    transform: translate(16em, -14em);
 }
 
 .list li {
@@ -474,7 +478,7 @@ li {
     :root {
         /* startje */
         --color-main: Red;
-        --color-background: rgb(0, 0, 0);
+        --color-background: linear-gradient(45deg, rgba(128,0,116,1) 0%, rgba(119,0,0,1) 32%, rgba(0,2,88,1) 67%, rgba(157,123,0,1) 100%);
     }
 
     .kaart {
