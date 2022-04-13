@@ -120,7 +120,8 @@ h1 {
 
 #rollhelp,
 #bingohelp,
-.list li, #nobingo {
+.list li,
+#nobingo {
     color: var(--color-main)
 }
 
@@ -204,12 +205,6 @@ h1 {
     box-shadow: 0.2em 0.2em 0px 0px darkred;
 }
 
-.checked:hover {
-    background-color: darkgray;
-    box-shadow: 0.2em 0.2em 0px 0px gray;
-    cursor: pointer;
-}
-
 
 
 
@@ -273,12 +268,12 @@ p {
 }
 
 .list {
-    transform: translate(16em, -14em);
+    transform: translate(15em, -14em);
 }
 
 .list li {
     font-family: eenfont;
-    width: 5em;
+    width: 8em;
 }
 
 .stamp:hover {
@@ -301,22 +296,6 @@ p {
 .radio {
     position: absolute;
     transform: translateX(-9999em);
-}
-
-#box1:checked + .box {
-    background-color: red;
-}
-
-#box1:checked + .box:hover {
-    background-color: grey;
-}
-
-#box2:checked + .box {
-    background-color: red;
-}
-
-#box2:checked + .box:hover {
-    background-color: grey;
 }
 
 li {
@@ -387,10 +366,10 @@ li {
         margin: 0.3em;
     }
 
-    .checkedBox {
-        background-color: red;
-        height: 5em;
-        width: 5em;
+    .checked:hover {
+        background-color: darkgray;
+        box-shadow: 0.2em 0.2em 0px 0px gray;
+        cursor: pointer;
     }
 
     .box2 {

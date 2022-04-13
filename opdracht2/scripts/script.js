@@ -27,14 +27,16 @@ var dragging = false;
 document.getElementById("startbutton").addEventListener("click", start);
 
 if (window.screen.width < 900) {
-    document.querySelector(".list li").innerHTML = "Click on the numbers to check or uncheck them!"
-    document.querySelector("#rollhelp").innerHTML = "Click here to roll a number -->"
-    document.querySelector("#bingohelp").innerHTML = "<--Click here to call Bingo!"
-    document.querySelector(".stamp").style.display = "none"
+    document.querySelector(".list li").innerHTML = "Click on the numbers to check or uncheck them!";
+    document.querySelector("#rollhelp").innerHTML = "Click here to roll a number -->";
+    document.querySelector("#bingohelp").innerHTML = "<--Click here to call Bingo!";
+    document.querySelector(".stamp").style.display = "none";
+    document.querySelector(".list li").style.display = "none";
 }
 
 function start() {
     document.getElementById('startbutton').style.display = "none";
+    document.querySelector(".list li").style.display = "none";
     for (let i = 0; i < 5; i++) {
         const randomNummer = valuesB[Math.floor(Math.random() * valuesB.length)];
         element = document.querySelectorAll(".box");
@@ -206,10 +208,10 @@ function start() {
     if (window.screen.width < 900) {
         nummerBox.forEach(nummer => {
             nummer.addEventListener("click", touchCheck);
+            document.querySelector(".list li").style.display = "list-item"
         });
     }
 
-    document.querySelector(".list li").style.display = "none";
 
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') {
@@ -286,10 +288,12 @@ function hoverGetal(e) {
     if (dragging && !this.classList.contains("hovered") && !this.classList.contains("checked")) {
         this.classList.add("hovered");
     }
-    if (dragging == false && this.classList.contains("checked")) {
-        nummerBox.forEach(nummer => {
-            nummer.addEventListener("click", removeCheck);
-        });
+    if (window.screen.width > 900) {
+        if (dragging == false && this.classList.contains("checked")) {
+            nummerBox.forEach(nummer => {
+                nummer.addEventListener("click", removeCheck);
+            });
+        }
     }
 }
 
@@ -303,21 +307,28 @@ function check() {
     if (dragging == true) {
         this.classList.add("checked");
         this.classList.remove("hovered");
-        console.log("gelukt");
     }
 }
 
 function touchCheck() {
-    this.classList.add("checked");
-    console.log("gelukt");
+    if (!this.classList.contains("checked")) {
+        this.classList.add("checked");
+        document.querySelector(".list li").style.display = "none";
+        console.log("gelukt");
+    } else {
+        this.classList.remove("checked")
+    }
 }
 
 function removeCheck() {
-    this.classList.remove("checked");
+    if (this.classList.contains("checked")) {
+        this.classList.remove("checked");
+    }
 }
 
 
 function roll() {
+    document.querySelector(".list li").style.display = "none";
     document.getElementById('rollbutton').removeAttribute("onclick");
     document.getElementById("nobingo").style.display = "none";
     const randomNummer = rollerArray[Math.floor(Math.random() * rollerArray.length)];
@@ -344,7 +355,7 @@ function roll() {
         document.getElementById('rollbutton').setAttribute('onclick', 'roll()')
         document.addEventListener('keyup', event => {
             if (event.code === 'Space') {
-                roll(); //whatever you want to do when space is pressed
+                roll(); 
             }
         }, {
             once: true
@@ -361,6 +372,7 @@ function roll() {
 document.getElementById("bingobutton").addEventListener("click", bingo);
 
 function bingo() {
+    document.querySelector(".list li").style.display = "none";
     const containsAllB = rowB.every(element => {
         return rolled.includes(element);
     });
