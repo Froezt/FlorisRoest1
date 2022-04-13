@@ -34,6 +34,7 @@ if (window.screen.width < 900) {
     document.querySelector(".list li").style.display = "none";
 }
 
+// Hier word de startfunctie aangeroepen die geactiveerd word zodra de startknop word ingedrukt, deze functie maakt de nummers voor de kaart aan met een bepaalde range aan cijfers voor elke collumn. verder verschijnen de roll en bingo button en activeert het de spraakherkenning.
 function start() {
     document.getElementById('startbutton').style.display = "none";
     document.querySelector(".list li").style.display = "none";
@@ -166,18 +167,6 @@ function start() {
     document.getElementById("bingobutton").style.display = "inline-block";
     document.getElementById("rollhelp").style.display = "inline-block";
     document.getElementById("bingohelp").style.display = "inline-block";
-    console.log(column1);
-    console.log(column2);
-    console.log(column3);
-    console.log(column4);
-    console.log(column5);
-    console.log(rowB);
-    console.log(rowI);
-    console.log(rowN);
-    console.log(rowG);
-    console.log(rowO);
-    console.log(diagonal1);
-    console.log(diagonal2);
     const stamp = document.querySelector(".list");
     const kaart = document.querySelector(".kaart");
     var sortable1 = new Sortable(stamp, {
@@ -326,7 +315,7 @@ function removeCheck() {
     }
 }
 
-
+//hier word de roll functie aangeroepen, dit zorgt voor de roller animatie, het kiezen van een random nummer en het plaatsen van dit nummer op de balletjes plaat, verder zorgt het ervoor dat bepaalde teksten verdwijnen als die op dat moment op het scherm staan.
 function roll() {
     document.querySelector(".list li").style.display = "none";
     document.getElementById('rollbutton').removeAttribute("onclick");
@@ -371,6 +360,8 @@ function roll() {
 
 document.getElementById("bingobutton").addEventListener("click", bingo);
 
+
+//De bingo functie checked of er bingo is, met arrays voor elke bingo mogelijkheid op de kaart checked die of de lengte van 1 van de arrays lang genoeg is voor een bingo.
 function bingo() {
     document.querySelector(".list li").style.display = "none";
     const containsAllB = rowB.every(element => {

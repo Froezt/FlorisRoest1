@@ -346,6 +346,11 @@ li {
         transform: translate(67em, -33em);
     }
 
+    html,
+    body {
+        overflow-y: hidden;
+    }
+
     .button {
         border: 1px solid #d02718;
         font-size: 1.1em;
