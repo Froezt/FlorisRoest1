@@ -26,6 +26,13 @@ var dragging = false;
 
 document.getElementById("startbutton").addEventListener("click", start);
 
+if (window.screen.width < 900) {
+    document.querySelector(".list li").innerHTML = "Click on the numbers to check or uncheck them!"
+    document.querySelector("#rollhelp").innerHTML = "Click here to roll a number -->"
+    document.querySelector("#bingohelp").innerHTML = "<--Click here to call Bingo!"
+    document.querySelector(".stamp").style.display = "none"
+}
+
 function start() {
     document.getElementById('startbutton').style.display = "none";
     for (let i = 0; i < 5; i++) {
@@ -196,6 +203,12 @@ function start() {
         scroll: false,
     });
 
+    if (window.screen.width < 900) {
+        nummerBox.forEach(nummer => {
+            nummer.addEventListener("click", touchCheck);
+        });
+    }
+
     document.querySelector(".list li").style.display = "none";
 
     document.addEventListener('keyup', event => {
@@ -225,7 +238,7 @@ function start() {
         let commando = event.results[last][0].transcript;
         console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
 
-        if (commando.trim() == "bingo" || commando.trim() == "Bingo" ) {
+        if (commando.trim() == "bingo" || commando.trim() == "Bingo") {
             bingo();
         }
     }
@@ -269,10 +282,6 @@ nummerBox.forEach(nummer => {
     nummer.addEventListener("mouseup", check);
 });
 
-nummerBox.forEach(nummer => {
-    nummer.addEventListener("touchend", check);
-});
-
 function hoverGetal(e) {
     if (dragging && !this.classList.contains("hovered") && !this.classList.contains("checked")) {
         this.classList.add("hovered");
@@ -296,6 +305,11 @@ function check() {
         this.classList.remove("hovered");
         console.log("gelukt");
     }
+}
+
+function touchCheck() {
+    this.classList.add("checked");
+    console.log("gelukt");
 }
 
 function removeCheck() {
