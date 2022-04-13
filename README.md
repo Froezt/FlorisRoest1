@@ -19,6 +19,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   3. <a href="https://www.youtube.com/watch?v=C22hQKE_32c&t=995s">Drag and drop</a>
   4. <a href="https://codepen.io/shooft/pen/wvPgqRX">Spraakherkening</a>
   5. <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">Grid</a>
+  6. <a href="https://sortablejs.github.io/Sortable/">Sortable JS</a>
 
 
 
@@ -128,13 +129,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Ik heb geleerd om spraak herkenning toe te voegen aan mijn site waarvan ik daarvoor eigenlijk nog nooit had gehoord en ook niet wist dat dat een mogelijkheid was. Verder heb ik meer geleerd over drag en drop en de eventlisteners die daarbij horen, de eventlisteners zelf zijn best simpel.
+  Ik heb geleerd om spraak herkenning toe te voegen aan mijn site waarvan ik daarvoor eigenlijk nog nooit had gehoord en ook niet wist dat dat een mogelijkheid was. Verder heb ik geleerd om de Sortable JS library te gebruiken op een andere manier dan met een een simpele list
 
   <img src="readme-images/site.png" width="700px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Ik vond het erg lastig om iets te "markeren" met drag en drop, telkens als ik over een gemarkeerd item ging met de stempel veranderde deze weer in een ongemarkeerd item. 
+  Ik vond het erg lastig om iets te "markeren" met drag en drop, telkens als ik over een gemarkeerd item ging met de stempel veranderde deze weer in een ongemarkeerd item, dit heb ik uiteindelijk kunnen fixen door een "mouseup" eventlistener te gebruiken. 
 
   <img src="readme-images/kaart1.png" width="375px" alt="bummer">
 </details>
