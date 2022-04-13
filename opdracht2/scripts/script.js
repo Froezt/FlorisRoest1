@@ -269,6 +269,10 @@ nummerBox.forEach(nummer => {
     nummer.addEventListener("mouseup", check);
 });
 
+nummerBox.forEach(nummer => {
+    nummer.addEventListener("touchend", check);
+});
+
 function hoverGetal(e) {
     if (dragging && !this.classList.contains("hovered") && !this.classList.contains("checked")) {
         this.classList.add("hovered");
