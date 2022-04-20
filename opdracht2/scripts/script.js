@@ -204,10 +204,15 @@ function start() {
 
     document.addEventListener('keyup', event => {
         if (event.code === 'Space') {
-            roll(); //whatever you want to do when space is pressed
+            var rollKnop = document.querySelector("#rollbutton");
+            console.log(rollKnop.disabled == false)
+            console.log(document.activeElement === rollKnop)
+            if (rollKnop.disabled == true || document.hasFocus() == false) {
+                
+            } else {
+                roll();
+            }
         }
-    }, {
-        once: true
     })
 
     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
@@ -315,10 +320,13 @@ function removeCheck() {
     }
 }
 
+document.getElementById("rollbutton").addEventListener("click", roll);
 //hier word de roll functie aangeroepen, dit zorgt voor de roller animatie, het kiezen van een random nummer en het plaatsen van dit nummer op de balletjes plaat, verder zorgt het ervoor dat bepaalde teksten verdwijnen als die op dat moment op het scherm staan.
 function roll() {
     document.querySelector(".list li").style.display = "none";
-    document.getElementById('rollbutton').removeAttribute("onclick");
+    //document.getElementById('rollbutton').removeAttribute("onclick");
+    var rollKnop = document.getElementById("rollbutton");
+    rollKnop.setAttribute("disabled", true);
     document.getElementById("nobingo").style.display = "none";
     const randomNummer = rollerArray[Math.floor(Math.random() * rollerArray.length)];
     element = document.querySelectorAll(".container div");
@@ -334,21 +342,20 @@ function roll() {
     element3.style.animation = 'none';
     element3.offsetHeight; /* trigger reflow */
     element3.style.animation = null;
-    const myTimeout = setTimeout(revealNumber, 5000);
+
+    element3.addEventListener('animationend', () => {
+        revealNumber();
+    });
+    //const myTimeout = setTimeout(revealNumber, 5000);
 
     function revealNumber() {
         element[randomNummer - 1].style.background = "linear-gradient(180deg, rgba(251,247,95,1) 49%, rgba(200,184,0,1) 100%)";
         element[randomNummer - 1].style.boxShadow = "0em -0.1em 0px 0px rgb(133, 133, 0)";
         element[randomNummer - 1].innerHTML = randomNummer;
         element4 = document.querySelectorAll("#roller .rollanimation");
-        document.getElementById('rollbutton').setAttribute('onclick', 'roll()')
-        document.addEventListener('keyup', event => {
-            if (event.code === 'Space') {
-                roll(); 
-            }
-        }, {
-            once: true
-        })
+        //document.getElementById('rollbutton').setAttribute('onclick', 'roll()')
+        rollKnop.removeAttribute("disabled");
+        rollKnop.focus();
     }
     var index = rollerArray.indexOf(randomNummer);
     rollerArray.splice(index, 1);
